@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: inherit;
+
+    font-size: 62.5%; /* 1rem = 10px */ 
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url('/sky-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+html{
+    height: 100%;
+}
+
+#app{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+/*>>>>>>>>>>>>>>>>>>  LOCATION SEARCH  <<<<<<<<<<<<<<<<<<<*/
+.location-search{
+    height: 6%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2vh;
+}
+
+.location-input{
+    background-color: rgba(255, 255, 255, 0);
+    height: 50%;
+    width: 16%;
+    border-style: none;
+    outline: 0;
+    padding: 4px 10px;
+    border-bottom: 2px solid aliceblue;
+    color: aliceblue;
+    font-size: 1.6vh;
+}
+
+.search-btn{
+    display: flex;
+    align-items: center;
+    height: 50%;
+    width: 3.8%;
+    border-bottom: 2px solid aliceblue;
+}
+
+::placeholder{
+    color: rgba(240, 248, 255, 0.61);
+}
+
+.search-btn:hover{
+    cursor: pointer;
+}
+
+.search-icon{
+    height: 3vh;
+}
+
+/*>>>>>>>>>>>>>>>>>>  MAIN-CONTENT (CITY, TEMPERATURE, INFO)  <<<<<<<<<<<<<<<<<<<*/
+.main-content{
+    height: 30%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.main-content .location{
+    font-size: 2.6vh;
+}
+
+.weather{
+    display: flex;
+    justify-content: center;
+}
+
+.weather .temperature{
+    font-size: 12vh;
+}
+
+.weather .celcius{
+    font-size: 2.4vh;
+    margin-top: 12%;
+}
+
+.main-content .weather-description{
+    font-size: 4.8vh;
+}
+
+
+/*>>>>>>>>  ADDITIONAL-INFO (FEELS LIKE, HUMIDITY, RAIN CHANCE AND WIND SPEED)  <<<<<<<<<*/
+.additional-infos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    height: 20%;
+    width: 50%;
+    max-width: 56vh;
+}
+
+.additional-infos .item-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4vh;
+}
+
+.additional-infos .rain-chance .item-description, .wind-speed .item-description{
+    gap: .8vh;
+}
+
+.additional-infos .item-description .item-icon{
+    height: 3.4vh;
+}
+
+.additional-infos .thermal-sensation, .humidity, .rain-chance, .wind-speed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.additional-infos .item-data{
+    font-size: 3vh;
+}
+
+
+
+
+/*>>>>>>>>>>>>>>>>>>  RESPONSIVENESS - MEDIUM (TABLET) <<<<<<<<<<<<<<<<<<<*/
+@media (30rem <= width <= 40rem){
+    #app{
+        gap: 8%;
+        justify-content: space-around;
+    }
+
+   /*>>>>>>>>>>>>>>>>>>  LOCATION SEARCH  <<<<<<<<<<<<<<<<<<<*/
+   .location-input{
+        height: 56%;
+        width: 26%;
+        font-size: 2.6vw;
+    }
+
+    .search-btn{
+        height: 56%;
+        width: 7%;
+    }
+
+    ::placeholder{
+        color: rgba(240, 248, 255, 0.61);
+    }
+
+    .search-icon{
+        height: 4.6vw;
+    }  
+
+    /*>>>>>>>>>>>>>>>>>>  MAIN-CONTENT (CITY, TEMPERATURE, INFO)  <<<<<<<<<<<<<<<<<<<*/
+    .main-content{
+        height: 34%;
+        width: 40%;
+    }
+
+    .main-content .location{
+        font-size: 4vw;
+    }
+    
+    .weather .temperature{
+        font-size: 20vw;
+    }
+    
+    .weather .celcius{
+        font-size: 4vw;
+    }
+    
+    .main-content .weather-description{
+        font-size: 6vw;
+    }
+
+
+    /*>>>>>>>>  ADDITIONAL-INFO (FEELS LIKE, HUMIDITY, RAIN CHANCE AND WIND SPEED)  <<<<<<<<<*/
+    .additional-infos{
+        flex-direction: column;
+        justify-content: space-around;
+        height: 32%;
+    }
+    
+    .additional-infos .item-description{
+        font-size: 4vw;
+    }
+    
+    .additional-infos .rain-chance .item-description, .wind-speed .item-description{
+        gap: .8vh;
+    }
+    
+    .additional-infos .item-description .item-icon{
+        height: 4.4vw;
+    }
+    
+    .additional-infos .item-data{
+        font-size: 4vw;
+    }
+}
+
+
+/*>>>>>>>>>>>>>>>>>>  RESPONSIVENESS - SMALL (MOBILE)   <<<<<<<<<<<<<<<<<<<*/
+@media(width <= 30rem){
+
+    #app{
+        gap: 8%;
+        justify-content: space-evenly;
+    }
+
+
+    /*>>>>>>>>>>>>>>>>>>  LOCATION SEARCH  <<<<<<<<<<<<<<<<<<<*/
+    .location-input{
+        height: 60%;
+        width: 30%;
+        font-size: 3vw;
+    }
+
+    .search-btn{
+        height: 60%;
+        width: 9%;
+    }
+
+    ::placeholder{
+        color: rgba(240, 248, 255, 0.61);
+    }
+
+    .search-icon{
+        height: 6vw;
+    } 
+
+
+    /*>>>>>>>>>>>>>>>>>>  MAIN-CONTENT (CITY, TEMPERATURE, INFO)  <<<<<<<<<<<<<<<<<<<*/
+    .main-content{
+        height: 34%;
+        width: 40%;
+    }
+
+    .main-content .location{
+        font-size: 5vw;
+    }
+    
+    .weather .temperature{
+        font-size: 26vw;
+    }
+    
+    .weather .celcius{
+        font-size: 5vw;
+    }
+    
+    .main-content .weather-description{
+        font-size: 8vw;
+    }
+
+
+    /*>>>>>>>>  ADDITIONAL-INFO (FEELS LIKE, HUMIDITY, RAIN CHANCE AND WIND SPEED)  <<<<<<<<<*/
+    .additional-infos{
+        flex-direction: column;
+        justify-content: space-around;
+        height: 32%;
+    }
+    
+    .additional-infos .item-description{
+        font-size: 4.4vw;
+    }
+    
+    .additional-infos .rain-chance .item-description, .wind-speed .item-description{
+        gap: .8vh;
+    }
+    
+    .additional-infos .item-description .item-icon{
+        height: 5.4vw;
+    }
+    
+    .additional-infos .item-data{
+        font-size: 5vw;
+    }
+}
